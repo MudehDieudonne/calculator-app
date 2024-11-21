@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
   box-shadow: 0 5px 10px #0505050d;
 }
 
-.display{
+.display {
   height: 80px;
   width: 100%;
   outline: none;
@@ -47,8 +47,4 @@ body {
   font-size: 20px;
   cursor: pointer;
   background-color: #eee;
-}
-
-.buttons input:active {
-    transform: scale(0.99);
 }
