@@ -46,5 +46,9 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  background-color: #eee;
+  background-color: #e5effd;
+}
+
+.operator {
+  color: rgb(0, 140, 255);
 }
