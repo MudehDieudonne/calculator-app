@@ -47,8 +47,9 @@ body {
   font-size: 20px;
   cursor: pointer;
   background-color: #e5effd;
+  box-shadow: 0 5px 10px #0505050d;
 }
 
 .operator {
-  color: #008cff;
+  color: #0a90fe;
 }
