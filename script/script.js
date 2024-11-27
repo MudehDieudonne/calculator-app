@@ -1,5 +1,5 @@
-const display = document.querySelector(".display"); // Use correct selector
-const buttons = document.querySelectorAll("button"); // Select all buttons
+const display = document.querySelector('.display') // Use correct selector
+const buttons = document.querySelectorAll(`button`) // Select all buttons
 const spacialChars = ["%", "*", "/", "-", "+", "="]; // Define special characters
 let output = ""; // Use `let` for a mutable variable
 
