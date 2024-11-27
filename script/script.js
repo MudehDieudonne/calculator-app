@@ -7,9 +7,8 @@ let output = '' // Use of `let` for a mutable variable
 const calculate = (btnValue) => {
   if (btnValue === '=' && output !== '') {
     // If "%" is involved, handle percentage calculation
-    output = output.includes('%')
-       eval(output.replace('%', '/100')) // handles percentages 
-       eval(output) // Evaluate expression
+    output = eval(output.replace('%', '/100')) // handles percentages 
+
   } else if (btnValue === 'AC') {
     output = ''
   } else if (btnValue === 'Del') {
