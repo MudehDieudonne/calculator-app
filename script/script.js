@@ -8,8 +8,8 @@ const calculate = (btnValue) => {
   if (btnValue === '=' && output !== '') {
     // If "%" is involved, handle percentage calculation
     output = output.includes('%')
-      ? eval(output.replace('%', '/100')) // handles percentages
-      : eval(output) // Evaluate expression
+       eval(output.replace('%', '/100')) // handles percentages 
+       eval(output) // Evaluate expression
   } else if (btnValue === 'AC') {
     output = ''
   } else if (btnValue === 'Del') {
@@ -17,7 +17,7 @@ const calculate = (btnValue) => {
   } else {
     // Prevent starting with a special character
     if (output === '' && spacialChars.includes(btnValue)) return
-    output += btnValue 
+    output += btnValue
   }
   display.value = output // Update the display
 }
