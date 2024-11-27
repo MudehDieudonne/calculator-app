@@ -11,13 +11,13 @@ const calculate = (btnValue) => {
       ? eval(output.replace('%', '/100')) // handles percentages
       : eval(output) // Evaluate expression
   } else if (btnValue === 'AC') {
-    output = '';
+    output = ''
   } else if (btnValue === 'Del') {
     output = output.toString().slice(0, -1)
   } else {
     // Prevent starting with a special character
     if (output === '' && spacialChars.includes(btnValue)) return
-    output += btnValue // Append the button value
+    output += btnValue 
   }
   display.value = output // Update the display
 }
