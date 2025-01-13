@@ -147,8 +147,5 @@ function checkForMatch() {
     }
 }
 
-
-
-
 // Initialize game
 createCards()
