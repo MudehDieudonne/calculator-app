@@ -100,7 +100,6 @@ function parseExpression (expr) {
       current += char
     }
   }
-  
   if (current !== '') {
     tokens.push(isNegative ? -parseFloat(current) : parseFloat(current))
   }
@@ -113,12 +112,12 @@ function parseExpression (expr) {
         const left = tokens[i - 1]
         const right = tokens[i + 1]
         let result
-
+      
         switch (operation) {
-          case '*': result = left * right 
+          case '*': result = left * right
             break
-          case '/': 
-          if (right === 0) throw new Error()
+          case '/':
+            if (right === 0) throw new Error()
             result = left / right
             break
           case '%': result = left % right
