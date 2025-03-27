@@ -7,29 +7,29 @@ buttons.addEventListener('click', (e) => {
   const type = e.target.dataset.type
   const value = e.target.value
 
-  switch(type) {
+  switch (type) {
     case 'number':
       handleNumber(value)
-    break
+      break
     case 'operator':
       handleOperator(value)
-    break
+      break
     case 'decimal':
       handleDecimal()
-    break
+      break
     case 'clear':
       clearDisplay()
-    break
+      break
     case 'backspace':
       deleteChar()
-    break
+      break
     case 'equals':
       calculateResult()
-    break
+      break
   }
-});
+})
 
-function handleNumber(num) {
+function handleNumber (num) {
   if (display.value === '0') {
     display.value = num
   } else {
@@ -37,7 +37,7 @@ function handleNumber(num) {
   }
 }
 
-function handleOperator(operator) {
+function handleOperator (operator) {
   const lastChar = display.value.slice(-1)
   const operators = '+-*/%'
 
@@ -50,7 +50,7 @@ function handleOperator(operator) {
   }
 }
 
-function handleDecimal() {
+function handleDecimal () {
   const parts = display.value.split(/[-+*/%]/)
   const currentPart = parts[parts.length - 1]
 
@@ -59,15 +59,15 @@ function handleDecimal() {
   }
 }
 
-function clearDisplay() {
+function clearDisplay () {
   display.value = ''
 }
 
-function deleteChar() {
+function deleteChar () {
   display.value = display.value.slice(0, -1)
 }
 
-function calculateResult() {
+function calculateResult () {
   const expression = display.value.replace(/×/g, '*')
 
   try {
@@ -79,12 +79,12 @@ function calculateResult() {
   }
 }
 
-function parseExpression(expr) {
+function parseExpression (expr) {
   const tokens = []
   let current = ''
   let isNegative = false
 
-  for (let char of expr) {
+  for (const char of expr) {
     if ('+-*/%'.includes(char)) {
       if (current === '' && char === '-') {
         isNegative = true
@@ -96,17 +96,17 @@ function parseExpression(expr) {
         tokens.push(char)
         current = ''
       }
-    }else {
-        current += char
+    } else {
+      current += char
     }
   }
-    
+  
   if (current !== '') {
     tokens.push(isNegative ? -parseFloat(current) : parseFloat(current))
   }
 
-const processOperations = (ops) => {
-  let i = 1;
+  const processOperations = (ops) => {
+    let i = 1
     while (i < tokens.length) {
       if (ops.includes(tokens[i])) {
         const operation = tokens[i]
@@ -114,27 +114,27 @@ const processOperations = (ops) => {
         const right = tokens[i + 1]
         let result
 
-        switch(operation) {
+        switch (operation) {
           case '*': result = left * right 
-          break
+            break
           case '/': 
           if (right === 0) throw new Error()
             result = left / right
             break
           case '%': result = left % right
-          break
+            break
           case '+': result = left + right
-          break
+            break
           case '-': result = left - right
-          break
+            break
         }
 
         tokens.splice(i - 1, 3, result)
-          i = 0
+        i = 0
       }
-        i += 2
+      i += 2
     }
-}
+  }
 
   processOperations(['*', '/', '%'])
   processOperations(['+', '-'])
