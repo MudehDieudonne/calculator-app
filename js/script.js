@@ -112,7 +112,7 @@ function parseExpression (expr) {
         const left = tokens[i - 1]
         const right = tokens[i + 1]
         let result
-      
+
         switch (operation) {
           case '*': result = left * right
             break
