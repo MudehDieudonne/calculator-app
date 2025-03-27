@@ -4,7 +4,7 @@
   padding: 20px;
   background: #2c2c2c;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px #00000080;
 }
 
 #display {
@@ -44,7 +44,7 @@ button:hover {
 }
 
 .equals {
-  background: #007AFF;
+  background: #007aff;
 }
 
 .special {
