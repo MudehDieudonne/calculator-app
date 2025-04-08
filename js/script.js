@@ -119,7 +119,14 @@ function parseExpression (expr) {
             if (right === 0) throw new Error()
             result = left / right
             break
-          case '%': result = left % right
+          case '%':
+            if (right === undefined) {
+              result = left / 100
+            } else if (right === 0) {
+              throw new Error()
+            } else {
+              result = left % right
+            }
             break
           case '+': result = left + right
             break
